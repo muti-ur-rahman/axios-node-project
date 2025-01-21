@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management System</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="container mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">User Management System</h1>
+
+    <!-- Buttons and Search Section -->
+    <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+      <button id="load-users" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
+        Load Users
+      </button>
+      <div class="flex-1">
+        <input id="search-input" type="text" placeholder="Search by ID or Name"
+          class="border border-gray-300 rounded-md px-4 py-2 w-full focus:ring focus:ring-blue-200">
+      </div>
+      <button id="search-by-id-btn" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">
+        Search by ID
+      </button>
+      <button id="search-by-name-btn" class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600 transition">
+        Search by Name
+      </button>
+    </div>
+
+    <!-- User List Section -->
+    <div id="user-list" class="bg-gray-50 p-4 rounded-md shadow-inner">
+      <p class="text-gray-600">No users loaded yet. Click "Load Users" to display user data.</p>
+    </div>
+
+    <!-- Create User Form -->
+    <form id="create-user-form" class="bg-gray-50 p-6 rounded-md shadow-md mt-6">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">Create New User</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <input id="name" type="text" placeholder="Name"
+          class="border border-gray-300 rounded-md px-4 py-2 focus:ring focus:ring-blue-200" required>
+        <input id="email" type="email" placeholder="Email"
+          class="border border-gray-300 rounded-md px-4 py-2 focus:ring focus:ring-blue-200" required>
+        <input id="phone" type="text" placeholder="Phone"
+          class="border border-gray-300 rounded-md px-4 py-2 focus:ring focus:ring-blue-200" required>
+      </div>
+      <button type="submit" class="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition">
+        Create User
+      </button>
+    </form>
+  </div>
+
+  <!-- Link Script -->
+  <script src="script.js"></script>
+</body>
+</html>

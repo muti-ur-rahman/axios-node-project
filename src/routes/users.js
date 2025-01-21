@@ -1,25 +1,27 @@
-const express = require("express");
-const { fetchUsers } = require("../services/apiClient");
+import express from "express";
+import {
+  getAllUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
+} from "../controllers/userController.js";
 
 const router = express.Router();
 
-// Route: GET /api/users
-router.get("/", async (req, res) => {
-  try {
-    const users = await fetchUsers();
+// READ: Get all users
+router.get("/", getAllUsers);
 
-    const transformedUsers = users.map((user) => ({
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      phone: user.phone,
-      company: user.company.name,
-    }));
+// READ: Get a user by ID
+router.get("/:id", getUserById);
 
-    res.json(transformedUsers);
-  } catch (error) {
-    res.status(500).json({ message: "Error fetching user data" });
-  }
-});
+// CREATE: Add a new user
+router.post("/", createUser);
 
-module.exports = router;
+// UPDATE: Update a user by ID
+router.put("/:id", updateUser);
+
+// DELETE: Remove a user by ID
+router.delete("/:id", deleteUser);
+
+export default router;

@@ -1,14 +1,10 @@
-const axios = require("axios");
-require("dotenv").config();
-
-// Create an Axios instance
+import axios from "axios";
 const apiClient = axios.create({
-  baseURL: process.env.API_URL || "https://jsonplaceholder.typicode.com", // Default base URL
+  baseURL: process.env.API_URL || "https://jsonplaceholder.typicode.com",
   timeout: 5000, // Timeout after 5 seconds
 });
 
-// Fetch users from the external API
-async function fetchUsers() {
+export const fetchUsers = async () => {
   try {
     const response = await apiClient.get("/users");
     return response.data; // Return user data
@@ -16,6 +12,4 @@ async function fetchUsers() {
     console.error("Error fetching users:", error.message);
     throw new Error("Failed to fetch users");
   }
-}
-
-module.exports = { fetchUsers };
+};

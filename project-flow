@@ -1,0 +1,20 @@
+project-directory/
+│
+├── src/
+│   ├── controllers/
+│   │   └── userController.js        // Handles business logic for users
+│   ├── db/
+│   │   └── db.js                    // Sample user data (mock database)
+│   ├── models/
+│   │   └── userModel.js             // Defines User model (for future DB integration)
+│   ├── routes/
+│   │   └── users.js                 // API routes related to users (GET, POST, PUT, DELETE)
+│   ├── services/
+│   │   └── apiClient.js             // API calls (e.g., fetch user data)
+│   ├── .env                          // Environment variables (API_URL, DB creds, etc.)
+│   ├── app.js                        // Main application entry point
+│   └── public/                       // Frontend UI files (HTML, CSS, JS)
+│       ├── index.html                // The main HTML file for UI
+│       ├── style.css                 // CSS for styling the frontend
+│       └── script.js                 // JS for handling frontend logic
+└── package.json                      // Node project dependencies and scripts
